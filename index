@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Surpresa Randômica</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Comfortaa', cursive;
+    }
+    body {
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+      transition: background 1s;
+    }
+    .container {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #000;
+      max-width: 600px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-family: 'Orbitron', sans-serif;
+      text-shadow: 2px 2px #000;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    button {
+      background: #fff;
+      color: #333;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      transform: scale(1.1);
+      background-color: #fdbb2d;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>✨ Surpresa Randômica ✨</h1>
+    <p id="frase">Clique no botão para gerar uma nova frase!</p>
+    <button onclick="gerarFrase()">Nova Frase</button>
+  </div>
+
+  <script>
+    const frases = [
+      "A curiosidade matou o gato, mas a satisfação o trouxe de volta.",
+      "Você está a um 'sim' de distância de mudar sua vida.",
+      "Códigos e cafés: a verdadeira alquimia moderna.",
+      "Tudo parece impossível até que alguém faz.",
+      "Seu navegador te entende mais do que você imagina...",
+      "Você é 99% feito de átomos de estrelas — use isso com sabedoria.",
+      "Quem não arrisca, não petisca... e quem petisca, engorda!",
+      "Nada é tão aleatório quanto esse site, e tá tudo bem."
+    ];
+
+    function gerarFrase() {
+      const index = Math.floor(Math.random() * frases.length);
+      document.getElementById('frase').innerText = frases[index];
+      // Gera uma nova cor de fundo aleatória
+      const cores = [git add
+        '#1a2a6c', '#b21f1f', '#fdbb2d',
+        '#43cea2', '#185a9d', '#ff4e50',
+        '#00c6ff', '#f77062'
+      ];
+      const novaCor = cores[Math.floor(Math.random() * cores.length)];
+      document.body.style.background = `linear-gradient(135deg, ${novaCor}, ${cores[Math.floor(Math.random() * cores.length)]})`;
+    }
+  </script>
+</body>
+</html>
